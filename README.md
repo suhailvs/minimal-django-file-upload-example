@@ -15,16 +15,18 @@ The following Django versions are supported:
 - [Django 1.4](https://docs.djangoproject.com/en/dev/releases/1.4/) | [source](../../tree/master/src/for_django_1-4/myproject).
 - [Django 1.3](https://docs.djangoproject.com/en/dev/releases/1.3/) | [source](../../tree/master/src/for_django_1-3/myproject).
 
-Usage (Django 2.0.2)
+Usage (Django 2.0)
 ------------------
-First ensure you have Django 2.0.2 installed. Then:
+First ensure you have Django 2.0 installed. Then:
 
     $ git clone https://github.com/axelpale/minimal-django-file-upload-example.git
 	$ cd minimal-django-file-upload-example
 	$ cd src/for_django_2-0/myproject
     $ python manage.py makemigrations
-	$ python manage.py migrate --run-syncdb
+	$ python manage.py migrate
 	$ python manage.py runserver
+
+now visit http://localhost:8000/myapp/
 
 
 Usage (Django 1.9)

@@ -6,17 +6,8 @@
     </head>
 
     <body>
-        <!-- List of uploaded documents -->
-        {% if documents %}
-            <ul>
-                {% for document in documents %}
-                    <li><a href="{{ document.docfile.url }}">{{ document.docfile.name }}</a></li>
-                {% endfor %}
-            </ul>
-        {% else %}
-            <p>No documents.</p>
-        {% endif %}
-
+    <div style="padding:40px;margin:40px;border:1px solid #ccc">
+        <h1>Django File Upload</h1>
         <!-- Upload form. Note enctype attribute! -->
         <form action="{% url "list" %}" method="post" enctype="multipart/form-data">
             {% csrf_token %}
@@ -29,8 +20,23 @@
                 {{ form.docfile }}
             </p>
 
-            <p><input type="submit" value="Upload"/></p>
+            <input type="submit" value="Upload"/>
         </form>
+        <hr>
+
+        <!-- List of uploaded documents -->
+        {% if documents %}
+            <p>Files</p>
+            <ul>
+                {% for document in documents %}
+                    <li><a href="{{ document.docfile.url }}">{{ document.docfile.name }}</a></li>
+                {% endfor %}
+            </ul>
+        {% else %}
+            <p>No documents.</p>
+        {% endif %}
+    </div>
+        
     </body>
 
 </html>
